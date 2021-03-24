@@ -64,7 +64,7 @@ def _graal_binary_implementation(ctx):
     env = {}
     env["PATH"] = ctx.configuration.host_path_separator.join(paths)
 
-    binary = ctx.actions.declare_file("%s-bin" % ctx.attr.name)
+    binary = ctx.actions.declare_file("%s.so" % ctx.attr.name)
 
     args = ctx.actions.args()
     args.add("--no-server")
